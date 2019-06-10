@@ -9,12 +9,14 @@ from skimage import io
 
 
 PSF_PARAMETERS_PATH = '/home/haoxu/.repos_py3/deconvolution/from_flowdec/microscope_psf.json'
+PSFSTACK_PATH = '/home/haoxu/Documents/deconvolution_test/psfstack.tif'
 IMAGESTACK_PATH = '/home/haoxu/Documents/deconvolution_test/stack.tif'
 
 Gibs = GibsonLanni()
 Gibs.load(PSF_PARAMETERS_PATH)
 kernel = Gibs.generate()
 kernel = np.asarray(kernel, dtype=np.float32)
+io.imsave(PSFSTACK_PATH, kernel)
 
 data = io.imread(IMAGESTACK_PATH)
 
