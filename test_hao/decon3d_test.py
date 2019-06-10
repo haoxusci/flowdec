@@ -19,6 +19,6 @@ kernel = np.asarray(kernel, dtype=np.float32)
 data = io.imread(IMAGESTACK_PATH)
 
 algo = fd_restoration.RichardsonLucyDeconvolver(data.ndim).initialize()
-res = algo.run(fd_data.Acquisition(data=data, kernel=kernel, niter=30)).data
+res = algo.run(fd_data.Acquisition(data=data, kernel=kernel), niter=30).data
 
 io.imsave('/home/haoxu/Documents/deconvolution_test/stack_deconv.tif', np.asarray(res, dtype=np.uint16))
