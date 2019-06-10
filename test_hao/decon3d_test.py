@@ -1,7 +1,7 @@
 """Test the deconvolution in git@github.com:haoxusci/flowdec.git for 3d image stack"""
 import numpy as np
 import matplotlib.pyplot as plt
-from skimage import ndimage, signal
+from scipy import ndimage, signal
 from flowdec import data as fd_data
 from flowdec import restoration as fd_restoration
 from flowdec.psf import GibsonLanni
